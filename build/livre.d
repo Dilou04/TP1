@@ -1,1 +1,1 @@
-build/livre.o: livre.cpp livre.h
+build/livre.o: livre.cpp livre.h date.h auteur.h

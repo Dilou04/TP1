@@ -4,28 +4,35 @@
 #include <iostream>
 #include <string>
 #include "date.h"
+#include "auteur.h"
 
 class Livre {
 private:
+    Auteur auteur_;
     std::string titre_;
-    std::string auteur_;
+    std::string nom_;
+    std::string prenom_;
+    std::string identifiant_;
+    std::string datenaissance_;
     std::string langue_;
     std::string genre_;
     std::string isbn_;
-    Date dateemprunt_;
+    std::string dayEmprunt_;
+    std::string monthEmprunt_;
+    std::string yearEmprunt_;
+
+
 public:
-    Livre (std::string titre, std::string auteur, std::string langue, std::string genre, std::string isbn, Date dateemprunt);
     std::string titre();
     std::string auteur();
     std::string langue();
     std ::string genre();
     std::string isbn();
-    Date emprunt();
-    Date getDate();
     std::string getTitre();
-    std::string getAuteur();
+    Auteur getAuteur();
     std::string getLangue();
     std::string getGenre();
     std::string getIsbn();
+    Livre(std::string titre, Auteur auteur, std::string langue, std::string genre, std::string isbn);
 };
 #endif
