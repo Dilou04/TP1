@@ -3,6 +3,7 @@
 #include "livre.h"
 #include "auteur.h"
 #include "lecteur.h"
+#include "emprunt.h"
 
 int main(){
     Date birthday(10, 19, 2010);
@@ -26,4 +27,11 @@ int main(){
 
     Lecteur dom("Dominique", "Ginhac", "16");
     std::cout << "Un des lecteurs se nome : " << dom.getPrenom() << " " << dom.getNom() << " avec comme identifiant le " << dom.getId() << std::endl;
+
+    Date emprunt(01, 10, 2026);
+    Emprunt premierEmprunt(emprunt, premierLivre, dom);
+    std::cout << "Le Livre " << premierEmprunt.getIsbn().getIsbn() << " a été emprunté le : " << premierEmprunt.getDateEmprunt().getDay() << " / " << premierEmprunt.getDateEmprunt().getMonth() << " / " << premierEmprunt.getDateEmprunt().getYears() << " et il a été emprunté par : " << premierEmprunt.getIdentifiant().getId() << std::endl;
+    
+
 }
+    
