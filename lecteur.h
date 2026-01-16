@@ -3,6 +3,7 @@
 
 #include <iostream>
 #include <string>
+#include <ostream>
 
 
 class Lecteur{
@@ -14,6 +15,9 @@ class Lecteur{
         std::string getNom();
         std::string getPrenom();
         std::string getId();        
+
+        friend std::ostream& operator<<(std::ostream& os, const Lecteur& lec);
+        
     private:
         std::string nom_;
         std::string prenom_;

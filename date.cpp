@@ -15,14 +15,8 @@ Date::Date(int month , int day, int years) : month_(month), day_(day), years_(ye
     }
 }
 
-std::string Date::getDay(){
-    return std::to_string(day_);
-}
-
-std::string Date::getMonth(){
-    return std::to_string(month_);
-}
-
-std::string Date::getYears(){
-    return std::to_string(years_);
+std::ostream& operator<<(std::ostream& os, const Date& dt)
+{
+    os << dt.day_ << '/' << dt.month_ << '/' << dt.years_;
+    return os;
 }

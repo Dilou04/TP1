@@ -3,6 +3,7 @@
 
 #include <iostream>
 #include <string>
+#include <ostream>
 
 class Date{
     public:
@@ -14,6 +15,8 @@ class Date{
         std::string getMonth();
         std::string getYears();
 
+        friend std::ostream& operator<<(std::ostream& os, const Date& dt);
+        
     private:
         int month_;
         int day_;
